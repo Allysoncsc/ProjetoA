@@ -41,6 +41,11 @@ public class Main {
 		    aluno1.getDisiciplinas().add(disciplina1);
 		    
 	        System.out.println("Nome : "+aluno1.getNome());
+	        double media = aluno1.getMedia(disciplina);
+	        System.out.println("Media: "+media);
+	        
+	        int r =  aluno1.removeDisciplina(disciplina1.getNomeDisciplina());
+		       aluno1.getDisiciplinas().remove(r);
 		 
 	 }
 }

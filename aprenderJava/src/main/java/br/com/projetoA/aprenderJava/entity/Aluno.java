@@ -40,14 +40,42 @@ public class Aluno {
 	
 	
 	//teste melhorar
-	public double getMedia() {
-		double somaNotas = 0.0;
-		
-		for (Disciplina disciplina : disiciplinas) {
-			somaNotas += disciplina.getNota1();
+		public double getMedia(String nome) {
+			double somaNotas = 0.0;
+			
+			for (Disciplina disciplina : disiciplinas) {
+				if(disciplina.getNomeDisciplina() == nome) {
+					somaNotas = disciplina.getNota1() + disciplina.getNota2() +
+							disciplina.getNota3() + disciplina.getNota4();
+					break;
+				}
+			}
+			
+			return somaNotas/4;
 		}
 		
-		return somaNotas/disiciplinas.size();
-	}
+		public String getAprovado(String nome) {
+			double media = this.getMedia(nome);
+			String resultado;
+			if(media >= 60) {
+				if(media >= 70) {
+				resultado = "Aprovado com média "+media;
+				}else {resultado = "Recuperação com média "+media;}
+			}else {resultado = "Reprovado com média "+media;}
+			return resultado;
+		}
+		
+		public int removeDisciplina(String nome) {
+			int index = 0;
+			for (Disciplina disciplina : disiciplinas) {
+				if(disciplina.getNomeDisciplina() == nome) {
+					break;
+				}
+				index++;
+			}
+			
+			return index;
+			
+		}
 	
 }
