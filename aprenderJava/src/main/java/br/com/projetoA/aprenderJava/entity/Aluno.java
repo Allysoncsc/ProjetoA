@@ -3,11 +3,11 @@ package br.com.projetoA.aprenderJava.entity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Aluno {
+public class Aluno extends Pessoa {
 
-	private String nome;
-	private int idade;
-	private String CPF;
+	
+	private String dataMatricula;
+	private String curso;
 	
 	private List <Disciplina> disciplinas = new ArrayList<Disciplina>();
 	
@@ -19,63 +19,29 @@ public class Aluno {
 	public void setDisiciplinas(List<Disciplina> disiciplinas) {
 		this.disciplinas = disiciplinas;
 	}
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	public int getIdade() {
-		return idade;
-	}
-	public void setIdade(int idade) {
-		this.idade = idade;
-	}
-	public String getCPF() {
-		return CPF;
-	}
-	public void setCPF(String cPF) {
-		CPF = cPF;
-	}
 	
 	
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((CPF == null) ? 0 : CPF.hashCode());
-		result = prime * result + ((disciplinas == null) ? 0 : disciplinas.hashCode());
-		result = prime * result + idade;
-		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
-		return result;
+	
+	
+	
+		
+		public String getDataMatricula() {
+		return dataMatricula;
 	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Aluno other = (Aluno) obj;
-		if (CPF == null) {
-			if (other.CPF != null)
-				return false;
-		} else if (!CPF.equals(other.CPF))
-			return false;
-		if (disciplinas == null) {
-			if (other.disciplinas != null)
-				return false;
-		} else if (!disciplinas.equals(other.disciplinas))
-			return false;
-		if (idade != other.idade)
-			return false;
-		if (nome == null) {
-			if (other.nome != null)
-				return false;
-		} else if (!nome.equals(other.nome))
-			return false;
-		return true;
+	public void setDataMatricula(String dataMatricula) {
+		this.dataMatricula = dataMatricula;
+	}
+	public String getCurso() {
+		return curso;
+	}
+	public void setCurso(String curso) {
+		this.curso = curso;
+	}
+	public List<Disciplina> getDisciplinas() {
+		return disciplinas;
+	}
+	public void setDisciplinas(List<Disciplina> disciplinas) {
+		this.disciplinas = disciplinas;
 	}
 		//teste melhorar
 		public double getMedia(String nome) {

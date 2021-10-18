@@ -1,30 +1,18 @@
 package br.com.projetoA.aprenderJava.entity;
 
-public class Professor {
+public class Professor extends Pessoa {
 	
-	private String nome;
-	private int idade;
-	private String CPF;
+	private String id;
 	private Disciplina disciplina;
 	
 	
-	public String getNome() {
-		return nome;
+	
+	
+	public String getId() {
+		return id;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	public int getIdade() {
-		return idade;
-	}
-	public void setIdade(int idade) {
-		this.idade = idade;
-	}
-	public String getCPF() {
-		return CPF;
-	}
-	public void setCPF(String cPF) {
-		CPF = cPF;
+	public void setId(String id) {
+		this.id = id;
 	}
 	public Disciplina getDisciplina() {
 		return disciplina;
@@ -32,7 +20,6 @@ public class Professor {
 	public void setDisciplina(Disciplina disciplina) {
 		this.disciplina = disciplina;
 	}
-	
 	
 	
 	
