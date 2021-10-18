@@ -39,6 +39,46 @@ public class Disciplina {
 	public void setNota4(double nota4) {
 		this.nota4 = nota4;
 	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((nomeDisciplina == null) ? 0 : nomeDisciplina.hashCode());
+		long temp;
+		temp = Double.doubleToLongBits(nota1);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(nota2);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(nota3);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(nota4);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Disciplina other = (Disciplina) obj;
+		if (nomeDisciplina == null) {
+			if (other.nomeDisciplina != null)
+				return false;
+		} else if (!nomeDisciplina.equals(other.nomeDisciplina))
+			return false;
+		if (Double.doubleToLongBits(nota1) != Double.doubleToLongBits(other.nota1))
+			return false;
+		if (Double.doubleToLongBits(nota2) != Double.doubleToLongBits(other.nota2))
+			return false;
+		if (Double.doubleToLongBits(nota3) != Double.doubleToLongBits(other.nota3))
+			return false;
+		if (Double.doubleToLongBits(nota4) != Double.doubleToLongBits(other.nota4))
+			return false;
+		return true;
+	}
 	
 	
 	

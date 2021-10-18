@@ -9,15 +9,15 @@ public class Aluno {
 	private int idade;
 	private String CPF;
 	
-	private List <Disciplina> disiciplinas = new ArrayList<Disciplina>();
+	private List <Disciplina> disciplinas = new ArrayList<Disciplina>();
 	
 	
 	
 	public List<Disciplina> getDisiciplinas() {
-		return disiciplinas;
+		return disciplinas;
 	}
 	public void setDisiciplinas(List<Disciplina> disiciplinas) {
-		this.disiciplinas = disiciplinas;
+		this.disciplinas = disiciplinas;
 	}
 	public String getNome() {
 		return nome;
@@ -39,11 +39,49 @@ public class Aluno {
 	}
 	
 	
-	//teste melhorar
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((CPF == null) ? 0 : CPF.hashCode());
+		result = prime * result + ((disciplinas == null) ? 0 : disciplinas.hashCode());
+		result = prime * result + idade;
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Aluno other = (Aluno) obj;
+		if (CPF == null) {
+			if (other.CPF != null)
+				return false;
+		} else if (!CPF.equals(other.CPF))
+			return false;
+		if (disciplinas == null) {
+			if (other.disciplinas != null)
+				return false;
+		} else if (!disciplinas.equals(other.disciplinas))
+			return false;
+		if (idade != other.idade)
+			return false;
+		if (nome == null) {
+			if (other.nome != null)
+				return false;
+		} else if (!nome.equals(other.nome))
+			return false;
+		return true;
+	}
+		//teste melhorar
 		public double getMedia(String nome) {
 			double somaNotas = 0.0;
 			
-			for (Disciplina disciplina : disiciplinas) {
+			for (Disciplina disciplina : disciplinas) {
 				if(disciplina.getNomeDisciplina() == nome) {
 					somaNotas = disciplina.getNota1() + disciplina.getNota2() +
 							disciplina.getNota3() + disciplina.getNota4();
@@ -66,16 +104,24 @@ public class Aluno {
 		}
 		
 		public int removeDisciplina(String nome) {
-			int index = 0;
-			for (Disciplina disciplina : disiciplinas) {
-				if(disciplina.getNomeDisciplina() == nome) {
+			/*int index = 0;
+			for (Disciplina disciplina : disciplinas) {
+				if(disciplina.getNomeDisciplina().equalsIgnoreCase(nome)) {
 					break;
 				}
 				index++;
+			}return index;
+			*/
+			int index = -1;
+			for(int i = 0; i < disciplinas.size();i++) {
+				Disciplina d = disciplinas.get(i);
+				if(d.getNomeDisciplina().equalsIgnoreCase(nome)) {
+					index = i;
+					break;
+				}
 			}
 			
 			return index;
-			
 		}
 	
 }
