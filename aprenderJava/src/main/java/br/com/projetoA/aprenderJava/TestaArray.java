@@ -6,6 +6,11 @@ public class TestaArray {
 
 		int notas[][] = new int[2][4];
 		
+		String texto = "Allyson, curso java, 80, 80, 90";
+		
+		//quebrar o array nas virgulas
+		String[] valoresArray = texto.split(",");
+		
 		notas[0][0]=70;
 		notas[0][1]=80;
 		notas[0][2]=90;
