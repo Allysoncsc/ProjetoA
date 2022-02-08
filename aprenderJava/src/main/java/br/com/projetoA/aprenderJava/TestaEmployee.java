@@ -9,7 +9,7 @@ import br.com.projetoA.aprenderJava.entity.Employee;
 public class TestaEmployee {
 
 	public static void main(String[] args) {
-		
+		// min33,35
 		Scanner sc = new Scanner(System.in);
 
 		System.out.println("How many employees will be registered? ");
@@ -33,6 +33,9 @@ public class TestaEmployee {
 			
 			list.add(emp);
 		}
+		System.out.println("Enter the employee id that will have salary increase: ");
+		int idsalary = sc.nextInt();
+		
 		sc.close();
 	}
 
