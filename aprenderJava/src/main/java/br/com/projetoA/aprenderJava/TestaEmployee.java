@@ -5,35 +5,70 @@ import java.util.List;
 import java.util.Scanner;
 
 import br.com.projetoA.aprenderJava.entity.Employee;
+import br.com.projetoA.aprenderJava.entity.OutsourcedEmployee;
 
 public class TestaEmployee {
 
 	public static void main(String[] args) {
-		// min33,35
+		// aula 148
 		Scanner sc = new Scanner(System.in);
-
+		List<Employee> list = new ArrayList<>();
+		
+		
 		System.out.println("How many employees will be registered? ");
 		int n = sc.nextInt();
 
-		List<Employee> list = new ArrayList<>();
+		
 
 		for (int i = 0; i < n; i++) {
-			sc.nextLine();
-			System.out.println("Employee " + (i + 1));
-			System.out.println("Id: ");
-			Integer id = sc.nextInt();
+			//Employee emp;
+			
+			System.out.println("Employee: "+(i+1) +" ");
+			
+			System.out.println("Outsourced (y/n)");
+			char ch = sc.next().charAt(0);
 			sc.nextLine();
 			System.out.println("Name: ");
 			String name = sc.nextLine();
-			System.out.println("Salary: ");
-			Double salary = sc.nextDouble();
+			
+			System.out.println("Hours: ");
+			int hours = sc.nextInt();
+			System.out.println("Additional charge: ");
+			double valuePerHour = sc.nextDouble();
+			System.out.println("ASalay: ");
+			double salary = sc.nextDouble();
+			
+			if(ch == 'y') {
+				System.out.println("Additional chage: ");
+				double additionalCharge = sc.nextDouble();
+				//emp = new OutsourcedEmployee(i, name, salary, hours, valuePerHour, additionalCharge);
+				list.add(new OutsourcedEmployee(i, name, salary, hours, valuePerHour, additionalCharge));
+			}else {
+				//emp = new Employee(i, name, salary, hours, valuePerHour);
+				list.add(new Employee(i, name, salary, hours, valuePerHour));
+				
+			}
+			
+			//System.out.println("Salary: ");
+			//Double salary = sc.nextDouble();
+			//Employee emp = new Employee(id, name, salary);
 
-			Employee emp = new Employee(id, name, salary);
-
-			list.add(emp);
+			//list.add(emp);
+			sc.close();
+		}
+		
+		// aula 148 mostra pagamento por hora dos funcionarios
+		for (Employee emp:list) {
+			System.out.println(emp.getName()+ " - $ " +String.format("%.2f", emp.payment()));
 		}
 		
 		
+		
+		
+		
+		
+		
+		//AULA ??? 
 		System.out.println("Enter the employee id that will have salary increase: ");	
 		int idsalary = sc.nextInt();
 		
