@@ -1,5 +1,13 @@
 package br.com.projetoA.aprenderJava.entity;
 
-public class BusinessAccount extends Account{
+public final class BusinessAccount extends Account{
+	
+	private Double loanLimit;
+
+	public BusinessAccount() {
+		super();
+	}
+	
+	
 	
 }
