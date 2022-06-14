@@ -2,9 +2,9 @@ package br.com.projetoA.aprenderJava.entity;
 
 public class Account {
 	
-	protected Integer number;
-	protected String holder;
-	protected Double balance;
+	private Integer number;
+	private String holder;
+	private Double balance;
 	
 	public Account() {
 		super();
@@ -38,7 +38,7 @@ public class Account {
 	}
 
 	public void withdraw(Double amount) {
-		balance -= amount + 0.5;
+		balance -= amount;
 	}
 	
 	public void deposit(Double amount) {
