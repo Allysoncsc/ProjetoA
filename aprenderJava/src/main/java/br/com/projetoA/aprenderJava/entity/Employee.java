@@ -2,21 +2,29 @@ package br.com.projetoA.aprenderJava.entity;
 
 public class Employee {
 
-	private Integer id;
-	private String name;
-	private Double salary;
-	
+	protected Integer id;
+	protected String name;
+	protected Double salary;
+	//aula 148
+	protected Integer hours;
+	protected Double valuePerHour;
 	
 	
 	public Employee() {
 		super();
 	}
-	public Employee(Integer id, String name, Double salary) {
+	
+	
+	public Employee(Integer id, String name, Double salary, Integer hours, Double valuePerHour) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.salary = salary;
+		this.hours = hours;
+		this.valuePerHour = valuePerHour;
 	}
+
+
 	public Integer getId() {
 		return id;
 	}
@@ -44,6 +52,30 @@ public class Employee {
 	@Override
 	public String toString() {
 		return id+ ", " + name +", "+ String.format("%.2f", salary);
+	}
+
+
+	public Integer getHours() {
+		return hours;
+	}
+
+
+	public void setHours(Integer hours) {
+		this.hours = hours;
+	}
+
+
+	public Double getValuePerHour() {
+		return valuePerHour;
+	}
+
+
+	public void setValuePerHour(Double valuePerHour) {
+		this.valuePerHour = valuePerHour;
+	}
+	
+	public double payment() {
+		return hours * valuePerHour;
 	}
 	
 }
