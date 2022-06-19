@@ -9,6 +9,13 @@ public class SavingsAccount extends Account{
 		this.interrestRate = interrestRate;
 	}
 
+	
+	public SavingsAccount(Integer number, String holder, Double balance, Double interrestRate) {
+		super(number, holder, balance);
+		this.interrestRate = interrestRate;
+	}
+
+
 	public Double getInterrestRate() {
 		return interrestRate;
 	}
