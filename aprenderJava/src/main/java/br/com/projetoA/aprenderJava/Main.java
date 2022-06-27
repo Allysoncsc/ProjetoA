@@ -14,8 +14,8 @@ public class Main {//aula 9.29
 	        
 	        String nome = JOptionPane.showInputDialog("Qual o nome do aluno?");
 	        aluno1.setNome(nome);
-	        String idade = JOptionPane.showInputDialog("Qual a idade do aluno?");
-	        aluno1.setIdade(Integer.valueOf(idade));
+	        //String idade = JOptionPane.showInputDialog("Qual a idade do aluno?");
+	        //aluno1.setIdade(Integer.valueOf(idade));
 	        String cpf = JOptionPane.showInputDialog("Qual o cpf do aluno?");
 	        aluno1.setCPF(cpf);
 	        

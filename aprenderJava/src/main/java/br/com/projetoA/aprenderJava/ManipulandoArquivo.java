@@ -14,15 +14,15 @@ public class ManipulandoArquivo {
 		
 		Pessoa pessoa1 = new Pessoa();
 		pessoa1.setNome("Allyson Correia");
-		pessoa1.setIdade(30);
+		
 		
 		Pessoa pessoa2 = new Pessoa();
 		pessoa2.setNome("MK");
-		pessoa2.setIdade(29);
+		
 		
 		Pessoa pessoa3 = new Pessoa();
 		pessoa3.setNome("ML");
-		pessoa3.setIdade(74);
+		
 		
 		List<Pessoa> pessoas = new ArrayList<Pessoa>();
 		pessoas.add(pessoa1);
@@ -41,7 +41,7 @@ public class ManipulandoArquivo {
 		//escreverNoArquivo.write("Eu sou Ceará");
 		
 		for(Pessoa p : pessoas) {
-			escreverNoArquivo.write(p.getNome() + "  ;  "+ p.getIdade() + "\n");
+			escreverNoArquivo.write(p.getNome() + "  ;  " + "\n");
 			System.out.println("teste");
 		}
 		
