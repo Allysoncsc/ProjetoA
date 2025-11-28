@@ -1,0 +1,10 @@
+
+
+INTELIJ
+psvm -> cria o public static void main
+sout -> System.out.println()
+Alt + 1: Abrir/Fechar aba de projetos
+Alt + Shift + Insert: Alterna entre modo de seleção de linha/coluna
+Ctrl + Shift + F12: Expandir a tela
+
+

@@ -1,0 +1,10 @@
+
+
+WRAPPER CLASSES
+Classes derivadas das primitivas aceitam valor nullo
+int -> Integer
+
+
+
+LIST
+não aceita tipos primitivos
