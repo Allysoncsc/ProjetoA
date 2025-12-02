@@ -1,6 +1,7 @@
 package br.com.projetoA.aprenderJava.ArrayList.model;
 
 
+import br.com.projetoA.aprenderJava.Enuns.CategoriaProduto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,5 +16,5 @@ public class Produto {
     private int codprod;
     private int qtd;
     private double value;
-    private String categoria;
+    private CategoriaProduto categoria;
 }

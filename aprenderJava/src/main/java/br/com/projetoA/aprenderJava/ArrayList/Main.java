@@ -2,6 +2,7 @@ package br.com.projetoA.aprenderJava.ArrayList;
 
 
 import br.com.projetoA.aprenderJava.ArrayList.model.Produto;
+import br.com.projetoA.aprenderJava.Enuns.CategoriaProduto;
 import org.w3c.dom.ls.LSOutput;
 
 import java.util.ArrayList;
@@ -18,8 +19,9 @@ public class Main {
             System.out.println("Você vai mesmo comprar: "+produto.getNome());
         }
 
-        System.out.println("-----------removendo com expressão lambda-----------");
-        listaProdutos.removeIf(x-> x.getCategoria() == "suplemento");
+        //System.out.println("-----------removendo com expressão lambda-----------");
+        //listaProdutos.removeIf(x-> x.getCategoria() == "suplemento");
+
 
 
         for(Produto produto : listaProdutos){
@@ -44,7 +46,9 @@ public class Main {
 
 
         System.out.println("-----------Criar uma nova lista filtrando-----------");
-        ArrayList<Produto> listLivros = (ArrayList<Produto>) listaProdutos.stream().filter(x-> x.getCategoria().equalsIgnoreCase("livro")).collect(Collectors.toList());
+        //ArrayList<Produto> listLivros = (ArrayList<Produto>) listaProdutos.stream().filter(x-> x.getCategoria().equalsIgnoreCase("livro")).collect(Collectors.toList());
+        ArrayList<Produto> listLivros = (ArrayList<Produto>) listaProdutos.stream().filter(x-> x.getCategoria() == CategoriaProduto.LIVRO).collect(Collectors.toList());
+
         for(Produto produto : listLivros){
             System.out.println("Você vai mesmo comprar: "+produto.getNome());
         }
@@ -61,27 +65,27 @@ public class Main {
         p1.setCodprod(1);
         p1.setValue(3600.00);
         p1.setQtd(1);
-        p1.setCategoria("eletro");
+        p1.setCategoria(CategoriaProduto.ELETRONICO);
         Produto p2 = new Produto();
         p2.setNome("WHey");
         p2.setCodprod(2);
         p2.setValue(150);
         p2.setQtd(1);
-        p2.setCategoria("suplemento");
+        p2.setCategoria(CategoriaProduto.valueOf("SUPLEMENTO"));
 
         Produto p3 = new Produto();
         p3.setNome("Senhor dos Anéis Edição de Colecionador");
         p3.setCodprod(3);
         p3.setValue(160);
         p3.setQtd(1);
-        p3.setCategoria("livro");
+        p3.setCategoria(CategoriaProduto.LIVRO);
 
         Produto p4 = new Produto();
         p4.setNome("O Hobbit");
         p4.setCodprod(4);
         p4.setValue(37);
         p4.setQtd(1);
-        p4.setCategoria("livro");
+        p4.setCategoria(CategoriaProduto.valueOf("LIVRO"));
 
 
         listaProdutos.add(p1);
