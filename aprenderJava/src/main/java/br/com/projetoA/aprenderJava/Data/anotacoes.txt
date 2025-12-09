@@ -1,0 +1,32 @@
+
+
+data-hora local
+2025-12-04
+2024-12-04T07:48
+
+data-hora global
+2025-12-04T14:52:09Z
+
+
+
+
+
+Operações importantes
+instanciar uma data
+    texto iso 8601
+    text formato customizado
+    dia mes ano
+
+data-hora local
+    LocalDate; LocalDateTime
+data-hora global
+    instan
+Duração
+    Duration
+Outros
+    Zoned; ChronoUnit
+
+ Formatar uma data
+    data-> iso 8601
+
+

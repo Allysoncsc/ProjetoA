@@ -21,6 +21,7 @@ public class Main {
 
         //System.out.println("-----------removendo com expressão lambda-----------");
         //listaProdutos.removeIf(x-> x.getCategoria() == "suplemento");
+        listaProdutos.removeIf(x-> x.getCategoria() == CategoriaProduto.ELETRONICO);
 
 
 
