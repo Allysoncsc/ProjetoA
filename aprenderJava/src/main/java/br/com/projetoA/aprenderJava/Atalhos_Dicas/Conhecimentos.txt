@@ -8,3 +8,8 @@ int -> Integer
 
 LIST
 não aceita tipos primitivos
+
+
+Exception
+    extends Excepetions -> o compilador obriga a tratar
+    extends RunTimeExceptions -> o compilador não obriga você a tratar
